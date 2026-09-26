@@ -1,0 +1,29 @@
+import React from 'react';
+import { MessageCircle } from 'lucide-react';
+import { getWhatsAppQuoteLink } from '../../utils/whatsapp';
+
+export default function FloatingWhatsApp() {
+  const whatsappUrl = getWhatsAppQuoteLink({ service: 'General Safety Net Inquiry', area: 'Vizag' });
+
+  return (
+    <div className="fixed bottom-20 md:bottom-8 right-5 z-40 flex items-center gap-3">
+      {/* Tooltip Badge */}
+      <div className="hidden sm:flex items-center gap-2 bg-slate-900/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-xl backdrop-blur-md animate-pulse">
+        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span>Online • Instant Vizag Quote</span>
+      </div>
+
+      {/* Floating Button */}
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp with Asha Safety Nets Vizag"
+        className="relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transition-all duration-300 hover:scale-110 active:scale-95"
+      >
+        <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30"></span>
+        <MessageCircle className="w-7 h-7 fill-white stroke-none" />
+      </a>
+    </div>
+  );
+}
