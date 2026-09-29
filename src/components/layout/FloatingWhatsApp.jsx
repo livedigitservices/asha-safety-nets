@@ -7,12 +7,6 @@ export default function FloatingWhatsApp() {
 
   return (
     <div className="fixed bottom-20 md:bottom-8 right-5 z-40 flex items-center gap-3">
-      {/* Tooltip Badge */}
-      <div className="hidden sm:flex items-center gap-2 bg-slate-900/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-emerald-500/30 shadow-xl backdrop-blur-md animate-pulse">
-        <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>Online • Instant Vizag Quote</span>
-      </div>
-
       {/* Floating Button */}
       <a
         href={whatsappUrl}

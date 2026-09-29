@@ -34,15 +34,15 @@ export default function CostCalculator({ onOpenQuoteModal }) {
         subtitle="Get a transparent instant cost estimate based on your balcony or terrace dimensions in Visakhapatnam."
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start font-sans">
         {/* Left Column: Inputs */}
         <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-6">
           <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-            <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600">
+            <div className="w-10 h-10 rounded-xl bg-[#EBAC57]/10 border border-[#EBAC57]/30 flex items-center justify-center text-[#264595] font-bold">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-slate-900">Select Net Specifications</h3>
+              <h3 className="text-lg font-bold text-slate-900 font-heading">Select Net Specifications</h3>
               <p className="text-xs text-slate-500">Adjust dimensions to see live Vizag rates</p>
             </div>
           </div>
@@ -59,8 +59,8 @@ export default function CostCalculator({ onOpenQuoteModal }) {
                   onClick={() => setNetType(key)}
                   className={`p-3 rounded-xl border text-left text-xs font-bold transition-all ${
                     netType === key
-                      ? 'bg-sky-50 border-sky-400 text-sky-700 shadow-xs'
-                      : 'bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-300'
+                      ? 'bg-[#EBAC57] border-[#EB7D1D] text-slate-950 shadow-xs'
+                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-[#EBAC57]'
                   }`}
                 >
                   {item.name.split('(')[0]}
@@ -74,7 +74,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
             <div className="space-y-2">
               <div className="flex justify-between text-xs font-bold">
                 <span className="text-slate-700">Length / Width (Feet):</span>
-                <span className="text-sky-600">{length} FT</span>
+                <span className="text-[#264595]">{length} FT</span>
               </div>
               <input
                 type="range"
@@ -82,7 +82,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
                 max="60"
                 value={length}
                 onChange={(e) => setLength(Number(e.target.value))}
-                className="w-full accent-sky-600 bg-slate-200 rounded-lg cursor-pointer h-2"
+                className="w-full accent-[#EBAC57] bg-slate-200 rounded-lg cursor-pointer h-2"
               />
               <input
                 type="number"
@@ -95,7 +95,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
             <div className="space-y-2">
               <div className="flex justify-between text-xs font-bold">
                 <span className="text-slate-700">Height (Feet):</span>
-                <span className="text-sky-600">{height} FT</span>
+                <span className="text-[#264595]">{height} FT</span>
               </div>
               <input
                 type="range"
@@ -103,7 +103,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
                 max="30"
                 value={height}
                 onChange={(e) => setHeight(Number(e.target.value))}
-                className="w-full accent-sky-600 bg-slate-200 rounded-lg cursor-pointer h-2"
+                className="w-full accent-[#EBAC57] bg-slate-200 rounded-lg cursor-pointer h-2"
               />
               <input
                 type="number"
@@ -122,7 +122,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
             <select
               value={selectedArea}
               onChange={(e) => setSelectedArea(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 focus:border-sky-500 focus:outline-none"
+              className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 focus:border-[#EBAC57] focus:outline-none"
             >
               {vizagAreasData.map((area) => (
                 <option key={area.name} value={area.name}>
@@ -134,19 +134,19 @@ export default function CostCalculator({ onOpenQuoteModal }) {
         </div>
 
         {/* Right Column: Estimate Card */}
-        <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-sky-50 to-white border border-sky-200 shadow-xl space-y-6">
+        <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#EBAC57]/10 to-white border border-[#EBAC57]/30 shadow-xl space-y-6">
           <div className="space-y-1 text-center lg:text-left">
-            <span className="text-[11px] font-bold text-sky-700 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-[#264595] uppercase tracking-wider">
               Estimated Area: {totalSqFt} Sq. Ft.
             </span>
-            <h4 className="text-xl font-extrabold text-slate-900">
+            <h4 className="text-xl font-extrabold text-slate-900 font-heading">
               Estimated Price Range
             </h4>
           </div>
 
           {/* Price Range */}
           <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center space-y-2 shadow-xs">
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gradient-primary">
+            <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#EBAC57]">
               ₹{minCost.toLocaleString('en-IN')} - ₹{maxCost.toLocaleString('en-IN')}
             </span>
             <p className="text-xs text-slate-500">
@@ -171,7 +171,7 @@ export default function CostCalculator({ onOpenQuoteModal }) {
           </div>
 
           {/* Action CTAs */}
-          <div className="space-y-3 pt-2">
+          <div className="space-y-3 pt-2 font-sans">
             <a
               href={`https://wa.me/919876543210?text=${encodeURIComponent(whatsappMsg)}`}
               target="_blank"
@@ -184,10 +184,10 @@ export default function CostCalculator({ onOpenQuoteModal }) {
 
             <button
               onClick={() => onOpenQuoteModal && onOpenQuoteModal(currentNet.name)}
-              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm transition-colors shadow-md"
+              className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#EBAC57] hover:bg-[#EB7D1D] text-slate-950 font-extrabold text-sm transition-colors shadow-md"
             >
               <span>Book Exact Free On-Site Measurement</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-slate-950" />
             </button>
           </div>
         </div>

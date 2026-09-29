@@ -20,6 +20,7 @@ export const servicesData = [
     startingPrice: '₹22 - ₹35 / sq. ft.',
     image: '/images/services/service_1.jpg',
     popular: true,
+    demandPercent: 94,
     category: 'residential'
   },
   {
@@ -43,6 +44,7 @@ export const servicesData = [
     startingPrice: '₹18 - ₹28 / sq. ft.',
     image: '/images/services/service_2.jpg',
     popular: true,
+    demandPercent: 89,
     category: 'residential'
   },
   {
@@ -66,6 +68,7 @@ export const servicesData = [
     startingPrice: '₹16 - ₹25 / sq. ft.',
     image: '/images/services/service_3.jpg',
     popular: false,
+    demandPercent: 82,
     category: 'commercial'
   },
   {
@@ -89,6 +92,7 @@ export const servicesData = [
     startingPrice: '₹25 - ₹38 / sq. ft.',
     image: '/images/services/service_4.jpg',
     popular: true,
+    demandPercent: 88,
     category: 'residential'
   },
   {
@@ -112,6 +116,7 @@ export const servicesData = [
     startingPrice: '₹28 - ₹42 / sq. ft.',
     image: '/images/services/service_5.jpg',
     popular: false,
+    demandPercent: 85,
     category: 'residential'
   },
   {
@@ -135,6 +140,7 @@ export const servicesData = [
     startingPrice: '₹140 - ₹220 / sq. ft.',
     image: '/images/services/service_6.jpg',
     popular: true,
+    demandPercent: 92,
     category: 'residential'
   },
   {
@@ -158,6 +164,7 @@ export const servicesData = [
     startingPrice: '₹12 - ₹20 / sq. ft.',
     image: '/images/services/service_7.jpg',
     popular: false,
+    demandPercent: 80,
     category: 'commercial'
   },
   {
@@ -181,6 +188,7 @@ export const servicesData = [
     startingPrice: '₹15 - ₹24 / sq. ft.',
     image: '/images/services/service_8.jpg',
     popular: false,
+    demandPercent: 91,
     category: 'commercial'
   },
   {
@@ -204,6 +212,7 @@ export const servicesData = [
     startingPrice: '₹18 - ₹30 / sq. ft.',
     image: '/images/services/service_9.jpg',
     popular: false,
+    demandPercent: 84,
     category: 'sports'
   },
   {
@@ -227,6 +236,7 @@ export const servicesData = [
     startingPrice: '₹22 - ₹36 / sq. ft.',
     image: '/images/services/service_10.jpg',
     popular: true,
+    demandPercent: 87,
     category: 'sports'
   }
 ];

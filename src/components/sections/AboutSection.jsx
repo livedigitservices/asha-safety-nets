@@ -27,7 +27,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="about" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <SectionHeading
         badge="About Asha Safety Nets"
         title="Visakhapatnam's Most Trusted"
@@ -41,15 +41,15 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-white p-1.5 hover:shadow-xl transition-shadow">
               <img
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+                src="/images/services/service_1.jpg"
                 alt="Balcony safety net installation in Vizag"
                 className="w-full h-48 sm:h-60 object-cover rounded-2xl"
               />
             </div>
             <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-white p-1.5 hover:shadow-xl transition-shadow">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80"
-                alt="High-rise building safety fitting"
+                src="/images/services/service_4.jpg"
+                alt="Children safety net fitting in Visakhapatnam"
                 className="w-full h-48 sm:h-60 object-cover rounded-2xl"
               />
             </div>
@@ -57,23 +57,23 @@ export default function AboutSection() {
 
           <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white p-2">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+              src="/images/services/service_6.jpg"
               alt="Invisible SS Wire Safety Netting in Visakhapatnam"
               className="w-full h-48 sm:h-64 object-cover rounded-2xl"
             />
             {/* Floating Experience Badge */}
-            <div className="absolute bottom-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
-              <div className="flex items-center gap-2 text-sky-600 font-extrabold text-xl">
+            <div className="absolute bottom-4 right-4 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/20 shadow-xl max-w-xs space-y-1 font-sans">
+              <div className="flex items-center gap-2 text-[#EBAC57] font-extrabold text-xl">
                 <span>10+ Years</span>
               </div>
-              <p className="text-slate-900 text-xs font-bold">Safety Excellence in Vizag</p>
-              <p className="text-slate-500 text-[11px]">15,000+ satisfied apartment clients</p>
+              <p className="text-white text-xs font-bold">Safety Excellence in Vizag</p>
+              <p className="text-slate-400 text-[11px]">15,000+ satisfied apartment clients</p>
             </div>
           </div>
         </div>
 
         {/* Right Column: Copy & Feature Grid */}
-        <div className="lg:col-span-6 space-y-6">
+        <div className="lg:col-span-6 space-y-6 font-sans">
           <div className="space-y-4">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
               Uncompromising Safety Standards for Every High-Rise Home
@@ -81,9 +81,7 @@ export default function AboutSection() {
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               At <strong>Asha Safety Nets Vizag</strong>, we understand that your balcony should be a place of relaxation—not worry. Living in high-rise apartments across Visakhapatnam brings breathtaking coastal views, but also severe safety risks for curious toddlers, active pets, and persistent pigeon invasions.
             </p>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Our mission is to provide invisible, ultra-strong, weather-resistant protection that keeps your loved ones secure without spoiling your home's aesthetics or sea breeze.
-            </p>
+      
           </div>
 
           {/* Feature Grid */}
@@ -91,12 +89,12 @@ export default function AboutSection() {
             {points.map((point, index) => (
               <div 
                 key={index} 
-                className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-sky-400 transition-all duration-300 space-y-2 group"
+                className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-[#EBAC57] transition-all duration-300 space-y-2 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#264595] group-hover:scale-110 transition-transform font-bold">
                   <point.icon className="w-5 h-5" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#264595] transition-colors">
                   {point.title}
                 </h4>
                 <p className="text-xs text-slate-500 leading-relaxed">

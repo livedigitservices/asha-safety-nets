@@ -17,7 +17,7 @@ export default function SafetyQuality() {
         { key: 'Aperture Geometry', val: '25mm - 50mm Diamond Weave' },
         { key: 'Chemical Inertness', val: '100% Acid & Acid Rain Resistant' }
       ],
-      image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80'
+      image: '/images/services/service_1.jpg'
     },
     {
       title: 'SS 304 Anchoring Hardware',
@@ -29,7 +29,7 @@ export default function SafetyQuality() {
         { key: 'Drilling Technology', val: 'Dustless Rotary Hammer Drill' },
         { key: 'Border Cable', val: '6mm Braided Lead Core Wire' }
       ],
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
+      image: '/images/services/service_6.jpg'
     },
     {
       title: 'UV 50+ Sunlight Shield',
@@ -40,7 +40,7 @@ export default function SafetyQuality() {
         { key: 'Color Stability', val: 'Non-yellowing crystal / black finish' },
         { key: 'Warranty', val: '10 Years Replacement Guarantee' }
       ],
-      image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80'
+      image: '/images/services/service_8.jpg'
     }
   ];
 
@@ -54,10 +54,10 @@ export default function SafetyQuality() {
       />
 
       {/* Top 4 Spec Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-sans">
         {safetySpecs.map((spec, i) => (
-          <div key={i} className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 font-bold">
+          <div key={i} className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3 hover:border-amber-300 transition-colors">
+            <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#264595] font-bold">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900">{spec.title}</h3>
@@ -67,7 +67,7 @@ export default function SafetyQuality() {
       </div>
 
       {/* Tech Specs Showcase */}
-      <div className="p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-8">
+      <div className="p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-8 font-sans">
         <div className="flex flex-wrap items-center gap-3 border-b border-slate-100 pb-4">
           {techDetails.map((tab, idx) => (
             <button
@@ -75,8 +75,8 @@ export default function SafetyQuality() {
               onClick={() => setActiveTab(idx)}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                 activeTab === idx
-                  ? 'bg-sky-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-600 hover:text-slate-900'
+                  ? 'bg-[#EBAC57] text-slate-950 shadow-md'
+                  : 'bg-slate-100 text-slate-700 hover:text-[#264595] hover:bg-slate-200'
               }`}
             >
               {tab.title}
@@ -88,7 +88,7 @@ export default function SafetyQuality() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold text-sky-600 uppercase tracking-wider">
+              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">
                 {techDetails[activeTab].subtitle}
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">

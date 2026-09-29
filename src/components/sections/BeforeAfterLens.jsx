@@ -16,12 +16,12 @@ export default function BeforeAfterLens({ onOpenQuoteModal }) {
 
       <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8">
         {/* Toggle Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 font-sans">
           <button
             onClick={() => setActiveTab('protected')}
             className={`px-6 py-3 rounded-full text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
               activeTab === 'protected'
-                ? 'bg-sky-600 text-white shadow-lg shadow-sky-500/25 scale-105'
+                ? 'bg-[#EBAC57] text-slate-950 shadow-lg shadow-amber-500/25 scale-105'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}
           >
@@ -43,22 +43,22 @@ export default function BeforeAfterLens({ onOpenQuoteModal }) {
         </div>
 
         {/* Dynamic Image & Copy Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center font-sans">
           <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-slate-200 shadow-md h-72 sm:h-96">
             <img
               src={
                 activeTab === 'protected'
-                  ? 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80'
-                  : 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1000&q=80'
+                  ? '/images/services/service_1.jpg'
+                  : '/images/services/service_2.jpg'
               }
               alt="Balcony View in Vizag"
               className="w-full h-full object-cover transition-opacity duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
             
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                activeTab === 'protected' ? 'bg-sky-500 text-white' : 'bg-rose-500 text-white'
+                activeTab === 'protected' ? 'bg-[#EBAC57] text-slate-950' : 'bg-rose-600 text-white'
               }`}>
                 {activeTab === 'protected' ? 'PROPERLY FITTED SAFETY MESH' : 'UNPROTECTED HIGH-RISE RISKS'}
               </span>
@@ -105,7 +105,7 @@ export default function BeforeAfterLens({ onOpenQuoteModal }) {
 
             <button
               onClick={onOpenQuoteModal}
-              className="w-full py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-[#EBAC57] hover:bg-[#EB7D1D] hover:text-white text-slate-950 font-extrabold text-sm shadow-md transition-colors flex items-center justify-center gap-2"
             >
               <span>Protect Your Balcony Today</span>
               <ArrowRight className="w-4 h-4" />

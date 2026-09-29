@@ -33,39 +33,39 @@ export default function ServiceModal({ service, onClose, onSelectQuote }) {
             {/* Prominent High-Contrast Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-3 right-3 z-30 w-10 h-10 rounded-full bg-slate-900/90 hover:bg-slate-900 text-white border border-white/20 shadow-xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-sky-400"
+              className="absolute top-3 right-3 z-30 w-10 h-10 rounded-full bg-slate-950/90 hover:bg-slate-900 text-white border border-[#EBAC57]/40 shadow-xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 group focus:outline-none focus:ring-2 focus:ring-[#EBAC57]"
               aria-label="Close details"
               title="Close (Esc)"
             >
-              <X className="w-5 h-5 text-white group-hover:rotate-90 transition-transform duration-300 stroke-[2.5]" />
+              <X className="w-5 h-5 text-[#EBAC57] group-hover:rotate-90 transition-transform duration-300 stroke-[2.5]" />
             </button>
             
-            <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+            <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-sans">
               <div>
-                <span className="px-3 py-1 rounded-full bg-sky-500 text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+                <span className="px-3 py-1 rounded-full bg-[#EBAC57] text-slate-950 text-xs font-extrabold uppercase tracking-wider shadow-sm">
                   {service.category}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5 drop-shadow-sm">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1.5 drop-shadow-sm font-heading">
                   {service.title}
                 </h3>
               </div>
               
-              <div className="bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-slate-200 text-right shadow-md">
-                <span className="text-[10px] text-slate-500 block uppercase font-bold">Estimated Cost</span>
-                <span className="text-sky-700 font-extrabold text-sm sm:text-base">{service.startingPrice}</span>
+              <div className="bg-slate-900/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20 text-right shadow-md font-sans">
+                <span className="text-[10px] text-[#EBAC57] block uppercase font-bold">Estimated Cost</span>
+                <span className="text-white font-extrabold text-sm sm:text-base">{service.startingPrice}</span>
               </div>
             </div>
           </div>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
             {service.fullDesc}
           </p>
         </div>
 
         {/* Specifications Grid */}
-        <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-          <h4 className="text-slate-900 font-bold text-sm flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-sky-600" />
+        <div className="space-y-3 bg-slate-50 p-4 rounded-2xl border border-slate-200 font-sans">
+          <h4 className="text-slate-900 font-bold text-sm flex items-center gap-2 font-heading">
+            <ShieldCheck className="w-4 h-4 text-[#EBAC57]" />
             <span>Technical Specifications</span>
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -79,8 +79,8 @@ export default function ServiceModal({ service, onClose, onSelectQuote }) {
         </div>
 
         {/* Key Features List */}
-        <div className="space-y-2">
-          <h4 className="text-slate-900 font-bold text-sm">Key Installation Benefits:</h4>
+        <div className="space-y-2 font-sans">
+          <h4 className="text-slate-900 font-bold text-sm font-heading">Key Installation Benefits:</h4>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
             {service.features.map((feature, i) => (
               <li key={i} className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function ServiceModal({ service, onClose, onSelectQuote }) {
         </div>
 
         {/* Modal Action Buttons */}
-        <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center gap-3">
+        <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center gap-3 font-sans">
           <a
             href={whatsappUrl}
             target="_blank"
@@ -108,10 +108,10 @@ export default function ServiceModal({ service, onClose, onSelectQuote }) {
               onClose();
               if (onSelectQuote) onSelectQuote(service.title);
             }}
-            className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm transition-colors shadow-md"
+            className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#EBAC57] hover:bg-[#EB7D1D] text-slate-950 font-extrabold text-sm transition-colors shadow-md"
           >
             <span>Book Free Site Visit</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-slate-950" />
           </button>
         </div>
       </div>

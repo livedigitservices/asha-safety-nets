@@ -19,8 +19,6 @@ export default function Navbar({ onOpenQuoteModal }) {
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Why Us', href: '#why-us' },
-    { name: 'Safety Specs', href: '#safety-quality' },
-    { name: 'Reviews', href: '#reviews' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -44,61 +42,61 @@ export default function Navbar({ onOpenQuoteModal }) {
         
         {/* Brand Logo */}
         <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 via-sky-500 to-teal-400 flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
-            <Shield className="w-6 h-6 text-white stroke-[2.5]" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#264595] via-slate-900 to-[#EBAC57] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-amber-400/30">
+            <Shield className="w-6 h-6 text-[#EBAC57] stroke-[2.5]" />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 font-sans">
               <span className="text-xl font-extrabold text-slate-900 tracking-tight">ASHA</span>
-              <span className="text-xl font-extrabold text-sky-600 tracking-tight">SAFETY NETS</span>
+              <span className="text-xl font-extrabold text-[#264595] tracking-tight">SAFETY NETS</span>
             </div>
             <span className="text-[10px] text-slate-500 font-semibold tracking-widest uppercase">VIZAG • VISAKHAPATNAM</span>
           </div>
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 font-sans">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`px-3 py-2 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 ${
+              className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 ${
                 link.highlight 
-                  ? 'text-sky-700 bg-sky-50 border border-sky-200 hover:bg-sky-100' 
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'text-amber-900 bg-[#FDF8EC] border border-[#F5E6B8] hover:bg-amber-100' 
+                  : 'text-slate-700 hover:text-[#264595] hover:bg-slate-100'
               }`}
             >
-              {link.highlight && <Calculator className="w-3.5 h-3.5 text-sky-600" />}
+              {link.highlight && <Calculator className="w-3.5 h-3.5 text-[#EBAC57]" />}
               {link.name}
             </a>
           ))}
         </nav>
 
         {/* Desktop CTA Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 font-sans">
           <a
             href={`tel:${DISPLAY_PHONE.replace(/\s+/g, '')}`}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-colors"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-sky-600" />
+            <Phone className="w-3.5 h-3.5 text-[#264595]" />
             <span>Call Now</span>
           </a>
 
           <button
             onClick={() => onOpenQuoteModal ? onOpenQuoteModal() : handleNavClick({ preventDefault: () => {} }, '#contact')}
-            className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 hover:from-sky-700 hover:to-teal-600 shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.02]"
+            className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-slate-950 bg-[#EBAC57] hover:bg-[#EB7D1D] hover:text-white shadow-md shadow-amber-500/20 transition-all duration-300 hover:scale-[1.02]"
           >
             <span>Get Free Quote</span>
-            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden font-sans">
           <button
             onClick={() => onOpenQuoteModal ? onOpenQuoteModal() : handleNavClick({ preventDefault: () => {} }, '#contact')}
-            className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-sm"
+            className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-950 bg-[#EBAC57] shadow-sm"
           >
             Free Quote
           </button>
@@ -115,7 +113,7 @@ export default function Navbar({ onOpenQuoteModal }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl font-sans">
           <div className="grid grid-cols-2 gap-1.5 pb-2">
             {navLinks.map((link) => (
               <a
@@ -124,7 +122,7 @@ export default function Navbar({ onOpenQuoteModal }) {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`px-3 py-2 rounded-xl text-xs font-semibold transition-colors ${
                   link.highlight 
-                    ? 'text-sky-700 bg-sky-50 border border-sky-200 col-span-2 text-center font-bold' 
+                    ? 'text-amber-900 bg-amber-50 border border-amber-200 col-span-2 text-center font-bold' 
                     : 'text-slate-700 hover:bg-slate-100'
                 }`}
               >
@@ -138,7 +136,7 @@ export default function Navbar({ onOpenQuoteModal }) {
               href={`tel:${DISPLAY_PHONE.replace(/\s+/g, '')}`}
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-xs font-bold text-slate-800 bg-slate-100 border border-slate-200"
             >
-              <Phone className="w-4 h-4 text-sky-600" />
+              <Phone className="w-4 h-4 text-[#264595]" />
               <span>Call {DISPLAY_PHONE}</span>
             </a>
 
@@ -148,7 +146,7 @@ export default function Navbar({ onOpenQuoteModal }) {
                 if (onOpenQuoteModal) onOpenQuoteModal();
                 else handleNavClick({ preventDefault: () => {} }, '#contact');
               }}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-teal-500 shadow-md"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-xs font-extrabold text-slate-950 bg-[#EBAC57] hover:bg-[#EB7D1D] hover:text-white shadow-md"
             >
               <span>Book Free On-Site Inspection</span>
               <ArrowRight className="w-4 h-4" />

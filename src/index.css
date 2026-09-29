@@ -2,18 +2,37 @@
 
 @layer base {
   :root {
-    --font-sans: 'Poppins', sans-serif;
+    --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Mulish', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Theme Palette Extracted from venkatsafetynets.com */
+    --color-primary-amber: #EBAC57;
+    --color-royal-blue: #264595;
+    --color-hover-orange: #EB7D1D;
+    --color-onyx-dark: #0B0F19;
+  }
+
+  *, ::before, ::after {
+    font-family: var(--font-sans);
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #FDFBF7;
+    color: #0F172A;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: var(--font-sans);
-    font-weight: 700;
+  h1, h2, h3, h4, h5, h6, .font-heading, button, input, select, textarea {
+    font-family: var(--font-sans) !important;
+  }
+
+  .font-display {
+    font-family: var(--font-heading) !important;
+  }
+
+  .font-body-mulish {
+    font-family: var(--font-body) !important;
   }
 }
 
@@ -22,21 +41,21 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #EBAC57;
 }
 
-/* Custom Soft Light Shadows & Cards */
+/* Custom Soft Luxury Cards */
 .card-light {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
   border-radius: 1.5rem;
 }
 
@@ -45,38 +64,54 @@
 }
 .card-light-hover:hover {
   transform: translateY(-4px);
-  border-color: #0284c7;
-  box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.12);
+  border-color: #EBAC57;
+  box-shadow: 0 20px 30px -10px rgba(235, 172, 87, 0.25);
 }
 
-/* Text Gradients for Light Theme */
-.text-gradient-primary {
-  background: linear-gradient(135deg, #0284c7 0%, #0d9488 50%, #2563eb 100%);
+/* Reference Theme Text Gradients & Solid Colors */
+.text-gradient-primary, .text-gradient-gold {
+  background: linear-gradient(135deg, #EBAC57 0%, #E29938 50%, #C4791E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+.text-gradient-royal {
+  background: linear-gradient(135deg, #264595 0%, #1A316E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-dark {
+  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Venkat Safety Nets Brand Colors */
+.bg-amber-brand {
+  background-color: #EBAC57;
+  color: #000000;
+}
+
+.bg-royal-blue {
+  background-color: #264595;
+  color: #FFFFFF;
+}
+
+.bg-onyx-dark {
+  background-color: #0B0F19;
+  color: #FFFFFF;
 }
 
 /* Subtle Light Dot Grid Background */
 .bg-light-dots {
-  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* Soft Pill Badges */
-.badge-blue {
-  background-color: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
-}
-
-.badge-amber {
-  background-color: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
+.badge-gold {
+  background-color: #FDF8EC;
+  color: #856404;
+  border: 1px solid #F5E6B8;
 }

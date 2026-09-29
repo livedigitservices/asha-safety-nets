@@ -27,7 +27,7 @@ export default function FAQSection() {
               key={index}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                 isOpen 
-                  ? 'bg-white border-sky-300 shadow-md' 
+                  ? 'bg-white border-[#EBAC57] shadow-md' 
                   : 'bg-white border-slate-200 hover:border-slate-300'
               }`}
             >
@@ -36,7 +36,7 @@ export default function FAQSection() {
                 className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
               >
                 <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 rounded bg-sky-50 border border-sky-100 text-sky-700 text-[10px] font-bold uppercase tracking-wider hidden sm:inline-block">
+                  <span className="px-2.5 py-1 rounded bg-[#EBAC57]/10 border border-[#EBAC57]/30 text-[#264595] text-[10px] font-bold uppercase tracking-wider hidden sm:inline-block">
                     {faq.category}
                   </span>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900">
@@ -45,7 +45,7 @@ export default function FAQSection() {
                 </div>
 
                 <div className={`w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 transition-transform duration-300 shrink-0 ${
-                  isOpen ? 'rotate-180 text-sky-600 bg-sky-50' : ''
+                  isOpen ? 'rotate-180 text-[#264595] bg-[#EBAC57]/20' : ''
                 }`}>
                   <ChevronDown className="w-4 h-4" />
                 </div>
