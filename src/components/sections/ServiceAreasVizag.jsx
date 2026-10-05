@@ -14,7 +14,7 @@ export default function ServiceAreasVizag({ onOpenQuoteModal }) {
   );
 
   return (
-    <section id="vizag-areas" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="vizag-areas" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <SectionHeading
         badge="Visakhapatnam Service Coverage"
         title="We Service All Major Neighborhoods Across"
@@ -25,7 +25,7 @@ export default function ServiceAreasVizag({ onOpenQuoteModal }) {
       {/* Vizag Coastal Image Header Banner Card */}
       <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl h-64 sm:h-80">
         <img
-          src="/images/services/service_1.jpg"
+          src="/images/services/banner_image3.jpg"
           alt="Visakhapatnam High-Rise Balcony Protection Area"
           className="w-full h-full object-cover"
         />

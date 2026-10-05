@@ -12,19 +12,19 @@ export default function Hero({ onOpenQuoteModal }) {
   // Clean Background Images Carousel
   const heroSlides = [
     {
-      url: '/images/services/service_1.jpg',
+      url: '/images/services/banner_image1.jpeg',
       title: 'High-Rise Balcony Safety Nets'
     },
     {
-      url: '/images/services/service_2.jpg',
+      url: '/images/services/banner_image2.jpg',
       title: 'Anti-Pigeon & Bird Protection Nets'
     },
     {
-      url: '/images/services/service_6.jpg',
+      url: '/images/services/banner_image3.jpg',
       title: 'Invisible Stainless Steel Nets'
     },
     {
-      url: '/images/services/service_4.jpg',
+      url: '/images/services/banner_image4.jpg',
       title: 'Children & Pet Safety Netting'
     }
   ];

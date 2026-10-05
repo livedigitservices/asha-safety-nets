@@ -39,7 +39,7 @@ export default function ProcessTimeline({ onOpenQuoteModal }) {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 font-sans">
+    <section id="how-it-works" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 font-sans">
       <SectionHeading
         badge="Simple 4-Step Process"
         title="How Asha Safety Nets"

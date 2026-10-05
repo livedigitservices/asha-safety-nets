@@ -6,7 +6,7 @@ export default function BeforeAfterLens({ onOpenQuoteModal }) {
   const [activeTab, setActiveTab] = useState('protected'); // 'protected' vs 'unprotected'
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <section className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
       <SectionHeading
         badge="Visual Balcony Inspector"
         title="Experience The Difference of"

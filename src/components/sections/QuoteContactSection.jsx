@@ -73,7 +73,7 @@ export default function QuoteContactSection({ presetService = '' }) {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="contact" className="py-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <SectionHeading
         badge="Get Free Site Visit & Quote"
         title="Contact Asha Safety Nets"

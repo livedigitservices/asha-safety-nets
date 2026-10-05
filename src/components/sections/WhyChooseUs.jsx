@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-950 text-white my-12 font-sans">
+    <section id="why-us" className="relative py-14 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-950 text-white my-12 font-sans">
       {/* Section Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img

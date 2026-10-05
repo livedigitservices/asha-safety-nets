@@ -45,7 +45,7 @@ export default function SafetyQuality() {
   ];
 
   return (
-    <section id="safety-quality" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="safety-quality" className="py-5 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       <SectionHeading
         badge="Engineering & Safety Standards"
         title="Uncompromised Durability &"
