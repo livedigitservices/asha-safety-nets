@@ -9,6 +9,7 @@ import FloatingActions from './components/layout/FloatingActions';
 
 // Sections
 import Hero from './components/sections/Hero';
+import BranchesSection from './components/sections/BranchesSection';
 import QuickStatsBanner from './components/sections/QuickStatsBanner';
 import BeforeAfterLens from './components/sections/BeforeAfterLens';
 import AboutSection from './components/sections/AboutSection';
@@ -46,6 +47,7 @@ export default function App() {
       {/* Page Content */}
       <main className="flex-1 space-y-4">
         <Hero onOpenQuoteModal={() => handleOpenQuote()} />
+        <BranchesSection onOpenQuoteModal={(svc) => handleOpenQuote(svc)} />
         <QuickStatsBanner />
         
         {/* Modern Interactive Balcony Visual Inspector */}

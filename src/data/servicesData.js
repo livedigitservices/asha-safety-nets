@@ -66,7 +66,7 @@ export const servicesData = [
       'Rust-proof galvanized stainless steel fixtures'
     ],
     startingPrice: '₹16 - ₹25 / sq. ft.',
-    image: '/images/services/service_3.png',
+    image: '/images/services/service_3.jpeg',
     popular: false,
     demandPercent: 82,
     category: 'commercial'

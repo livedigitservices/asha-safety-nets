@@ -113,6 +113,7 @@ export default function Footer({ onOpenQuoteModal }) {
             <ul className="space-y-2">
               {[
                 { name: 'Home', href: '#hero' },
+                { name: 'Our Branch Locations', href: '#branches' },
                 { name: 'About Asha Safety Nets', href: '#about' },
                 { name: 'Our Safety Net Services', href: '#services' },
                 { name: 'Cost / Sq. Ft. Calculator', href: '#calculator' },

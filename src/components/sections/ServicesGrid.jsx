@@ -70,11 +70,6 @@ export default function ServicesGrid({ onOpenQuoteModal }) {
                   <span>Top Choice in Vizag</span>
                 </div>
               )}
-
-              {/* Price Tag Overlay */}
-              <div className="absolute bottom-3 right-3 px-3 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md text-white border border-white/20 text-xs font-bold shadow-md">
-                <span>{service.startingPrice}</span>
-              </div>
             </div>
 
             {/* Card Content */}
