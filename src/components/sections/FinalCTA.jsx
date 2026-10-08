@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShieldCheck, ArrowRight, MessageCircle } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function FinalCTA({ onOpenQuoteModal }) {
@@ -37,7 +38,7 @@ export default function FinalCTA({ onOpenQuoteModal }) {
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base transition-colors shadow-lg"
           >
-            <MessageCircle className="w-5 h-5 fill-white stroke-none" />
+            <WhatsAppIcon className="w-5 h-5 text-white" />
             <span>WhatsApp Instant Quote</span>
           </a>
         </div>

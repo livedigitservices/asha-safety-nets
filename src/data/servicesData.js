@@ -18,7 +18,7 @@ export const servicesData = [
       'Precision border stitching with lead rope'
     ],
     startingPrice: '₹22 - ₹35 / sq. ft.',
-    image: '/images/services/service_1.jpg',
+    image: '/images/services/service_1.jpeg',
     popular: true,
     demandPercent: 94,
     category: 'residential'
@@ -42,7 +42,7 @@ export const servicesData = [
       'Custom color options (Transparent & Translucent)'
     ],
     startingPrice: '₹18 - ₹28 / sq. ft.',
-    image: '/images/services/service_2.jpg',
+    image: '/images/services/service_2.png',
     popular: true,
     demandPercent: 89,
     category: 'residential'
@@ -66,7 +66,7 @@ export const servicesData = [
       'Rust-proof galvanized stainless steel fixtures'
     ],
     startingPrice: '₹16 - ₹25 / sq. ft.',
-    image: '/images/services/service_3.jpg',
+    image: '/images/services/service_3.png',
     popular: false,
     demandPercent: 82,
     category: 'commercial'
@@ -234,7 +234,7 @@ export const servicesData = [
       'Heavy double-stitched border ropes'
     ],
     startingPrice: '₹22 - ₹36 / sq. ft.',
-    image: '/images/services/service_10.jpg',
+    image: '/images/services/service_10.jpeg',
     popular: true,
     demandPercent: 87,
     category: 'sports'

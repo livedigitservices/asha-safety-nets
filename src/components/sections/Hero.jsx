@@ -1,15 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Phone, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import gsap from 'gsap';
+import { Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { DISPLAY_PHONE } from '../../utils/whatsapp';
 
 export default function Hero({ onOpenQuoteModal }) {
-  const heroRef = useRef(null);
-  const titleRef = useRef(null);
-  const   textRef = useRef(null);
-  const ctaRef = useRef(null);
-
-  // Clean Background Images Carousel
+  // High-Definition Banner Images Carousel matching reference UI
   const heroSlides = [
     {
       url: '/images/services/banner_image1.jpeg',
@@ -24,22 +18,24 @@ export default function Hero({ onOpenQuoteModal }) {
       title: 'Invisible Stainless Steel Nets'
     },
     {
-      url: '/images/services/banner_image4.jpg',
+      url: '/images/services/banner_image4.png',
       title: 'Children & Pet Safety Netting'
     }
   ];
 
-  // Dynamic Rotating Keywords for Infinite Seamless Reveal
-  const dynamicWords = [
-    'Garware Balcony Nets',
-    'Anti-Pigeon Nets',
-    'Invisible SS Nets',
-    'Children Safety Nets'
+  // Rotating CTA Messages synchronized with image slide transitions
+  const callMessages = [
+    'Need Help? Call Us',
+    'Talk to Our Experts',
+    'Have Questions? Call Now',
+    'Get in Touch'
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [wordIndex, setWordIndex] = useState(0);
+  const [messageIndex, setMessageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   // Auto slide carousel (5 seconds per slide)
   useEffect(() => {
@@ -49,136 +45,127 @@ export default function Hero({ onOpenQuoteModal }) {
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
-  // Infinite seamless reveal word rotator (3 seconds per word)
+  // Synchronize rotating text slide-up animation with the image transition
   useEffect(() => {
-    const wordInterval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % dynamicWords.length);
-        setIsAnimating(false);
-      }, 400);
-    }, 3000);
-    return () => clearInterval(wordInterval);
-  }, [dynamicWords.length]);
+    setIsAnimating(true);
+    const animTimeout = setTimeout(() => {
+      setMessageIndex(currentSlide % callMessages.length);
+      setIsAnimating(false);
+    }, 250);
+
+    return () => clearTimeout(animTimeout);
+  }, [currentSlide, callMessages.length]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
-  // GSAP clean fade entrance
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from([titleRef.current, textRef.current, ctaRef.current], {
-        y: 25,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.15,
-        ease: 'power2.out'
-      });
-    }, heroRef);
+  // Mobile Touch Swipe Handling
+  const minSwipeDistance = 45;
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) nextSlide();
+    if (distance < -minSwipeDistance) prevSlide();
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const rawPhone = DISPLAY_PHONE.replace(/\s+/g, '');
 
   return (
     <section 
       id="hero" 
-      ref={heroRef}
-      className="relative h-[85vh] sm:h-[82vh] min-h-[560px] flex items-end justify-start pb-14 sm:pb-20 pt-20 px-4 sm:px-8 lg:px-12 overflow-hidden bg-slate-950 text-white font-sans"
+      className="relative w-full bg-slate-950 overflow-hidden font-sans select-none"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
-      {/* Background Image Carousel Track */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Full-Width Image Carousel Container */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[25/9] max-h-[700px] overflow-hidden bg-slate-900">
         {heroSlides.map((slide, index) => (
           <div 
             key={index} 
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
+              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
             <img 
               src={slide.url} 
               alt={slide.title} 
-              className="w-full h-full object-cover object-center scale-105 transition-transform duration-[7000ms] ease-out opacity-45"
+              className="w-full h-full object-cover object-left"
+              loading={index === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}
-      </div>
 
-      {/* Bottom-Left Aligned Hero Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="max-w-3xl space-y-5 text-left">
-          {/* Clean Modern Heading with Infinite Reveal Text Animation */}
-          <div ref={titleRef} className="space-y-3">
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18] font-heading">
-              Protect Your Balcony & Family With{' '}
-              <span className="block mt-1 sm:mt-0 sm:inline-block h-[1.3em] overflow-hidden align-bottom relative">
-                <span 
-                  className={`inline-block text-[#EBAC57] transition-all duration-500 ease-out transform ${
-                    isAnimating ? 'opacity-0 translate-y-6 scale-95' : 'opacity-100 translate-y-0 scale-100'
-                  }`}
-                >
-                  {dynamicWords[wordIndex]}
-                </span>
+        {/* Hero Call Section: Slide-Up Text is In Sync with Image Slide Transitions */}
+        <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 w-auto">
+          
+          {/* Slide-Up Rotating Text Badge Above Contact Number (Synced with Image Slides) */}
+          <div className="px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[#EBAC57]/60 shadow-xl flex items-center gap-1.5 pointer-events-none">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EBAC57] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#EBAC57]"></span>
+            </span>
+
+            <div className="h-6 w-42 sm:w-58 sm:h-7.5 overflow-hidden relative flex items-center">
+              <span
+                className={`block text-[11px] sm:text-lg font-bold text-[#EBAC57] tracking-tight whitespace-nowrap transition-all duration-400 ease-out transform ${
+                  isAnimating
+                    ? 'opacity-0 -translate-y-3 scale-95'
+                    : 'opacity-100 translate-y-0 scale-100'
+                }`}
+              >
+                {callMessages[messageIndex]}
               </span>
-            </h1>
-
-            {/* Minimal Subtitle */}
-            <p ref={textRef} className="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed font-normal opacity-90">
-              Garware 100% HDPE Nylon & Invisible Stainless Steel Nets for high-rise apartments in Vizag with 10 Years Guarantee.
-            </p>
+            </div>
           </div>
 
-          {/* 2 Clean CTA Buttons Aligned Left */}
-          <div ref={ctaRef} className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3.5 pt-2">
-            <button
-              onClick={() => onOpenQuoteModal && onOpenQuoteModal()}
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-[#EBAC57] hover:bg-[#EB7D1D] text-slate-950 font-extrabold text-sm sm:text-base shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer"
-            >
-              <span>Get Free On-Site Quote</span>
-              <ArrowRight className="w-4 h-4 text-slate-950" />
-            </button>
-
-            <a
-              href={`tel:${DISPLAY_PHONE.replace(/\s+/g, '')}`}
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base border border-white/25 backdrop-blur-md transition-all duration-200"
-            >
-              <Phone className="w-4 h-4 text-[#EBAC57]" />
-              <span>Call {DISPLAY_PHONE}</span>
-            </a>
-          </div>
-
+          {/* Centered Main Call CTA Button on Banner */}
+          <a
+            href={`tel:${rawPhone}`}
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full bg-[#EBAC57] hover:bg-[#EB7D1D] text-slate-950 font-extrabold text-xs sm:text-sm md:text-base shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 border-2 border-amber-300/40 uppercase tracking-wider whitespace-nowrap"
+          >
+            <Phone className="w-4 h-4 text-slate-950 fill-slate-950 shrink-0" />
+            <span>CALL : {DISPLAY_PHONE}</span>
+          </a>
         </div>
-      </div>
 
-      {/* Bottom-Right Corner Navigation & Slide Indicators */}
-      <div className="absolute bottom-8 right-6 sm:right-12 z-20 flex items-center gap-3">
-        <div className="flex items-center gap-1.5 mr-2">
+        {/* Left Arrow Navigation Button */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-xs border border-white/20 transition-all active:scale-90 shadow-lg cursor-pointer"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Right Arrow Navigation Button */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center backdrop-blur-xs border border-white/20 transition-all active:scale-90 shadow-lg cursor-pointer"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Bottom Slide Indicator Dots */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
           {heroSlides.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === currentSlide ? 'w-7 bg-[#EBAC57]' : 'w-2 bg-white/40 hover:bg-white/70'
+                idx === currentSlide ? 'w-6 bg-[#EBAC57]' : 'w-2 bg-white/50 hover:bg-white/80'
               }`}
               aria-label={`Slide ${idx + 1}`}
             />
           ))}
         </div>
 
-        <button
-          onClick={prevSlide}
-          className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-md cursor-pointer"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-4 h-4" />
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-md cursor-pointer"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-4 h-4" />
-        </button>
       </div>
     </section>
   );

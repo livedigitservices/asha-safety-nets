@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SectionHeading from '../ui/SectionHeading';
-import { Calculator, ArrowRight, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { Calculator, ArrowRight, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
+import { PHONE_NUMBER } from '../../utils/whatsapp';
 import { vizagAreasData } from '../../data/vizagAreasData';
 
 export default function CostCalculator({ onOpenQuoteModal }) {
@@ -173,12 +175,12 @@ export default function CostCalculator({ onOpenQuoteModal }) {
           {/* Action CTAs */}
           <div className="space-y-3 pt-2 font-sans">
             <a
-              href={`https://wa.me/919876543210?text=${encodeURIComponent(whatsappMsg)}`}
+              href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(whatsappMsg)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors shadow-md"
             >
-              <MessageCircle className="w-4 h-4 fill-white stroke-none" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Send Estimate via WhatsApp</span>
             </a>
 

@@ -33,22 +33,22 @@ export default function Navbar({ onOpenQuoteModal }) {
   };
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
+    <header className={`sticky top-0 z-40 bg-white transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md py-3' 
-        : 'bg-white/80 backdrop-blur-sm border-b border-slate-200/60 py-4'
+        ? 'border-b border-slate-200/90 shadow-md py-2.5' 
+        : 'border-b border-slate-100 py-3 sm:py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Logo */}
-        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-3 group">
+        <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2.5 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#264595] via-slate-900 to-[#EBAC57] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-amber-400/30">
             <Shield className="w-6 h-6 text-[#EBAC57] stroke-[2.5]" />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5 font-sans">
-              <span className="text-xl font-extrabold text-slate-900 tracking-tight">ASHA</span>
-              <span className="text-xl font-extrabold text-[#264595] tracking-tight">SAFETY NETS</span>
+              <span className="text-xl font-extrabold text-slate-950 tracking-tight font-heading">ASHA</span>
+              <span className="text-xl font-extrabold text-[#264595] tracking-tight font-heading">SAFETY NETS</span>
             </div>
             <span className="text-[10px] text-slate-500 font-semibold tracking-widest uppercase">VIZAG • VISAKHAPATNAM</span>
           </div>
@@ -61,13 +61,8 @@ export default function Navbar({ onOpenQuoteModal }) {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all duration-200 flex items-center gap-1.5 ${
-                link.highlight 
-                  ? 'text-amber-900 bg-[#FDF8EC] border border-[#F5E6B8] hover:bg-amber-100' 
-                  : 'text-slate-700 hover:text-[#264595] hover:bg-slate-100'
-              }`}
+              className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-slate-700 hover:text-[#264595] hover:bg-slate-50 transition-all duration-200"
             >
-              {link.highlight && <Calculator className="w-3.5 h-3.5 text-[#EBAC57]" />}
               {link.name}
             </a>
           ))}
@@ -92,18 +87,11 @@ export default function Navbar({ onOpenQuoteModal }) {
           </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger Button (Dark Square matching reference UI) */}
         <div className="flex items-center gap-2 lg:hidden font-sans">
           <button
-            onClick={() => onOpenQuoteModal ? onOpenQuoteModal() : handleNavClick({ preventDefault: () => {} }, '#contact')}
-            className="px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-950 bg-[#EBAC57] shadow-sm"
-          >
-            Free Quote
-          </button>
-          
-          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none"
+            className="p-2.5 rounded-md bg-[#18181B] text-white hover:bg-black focus:outline-none shadow-sm transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -113,18 +101,14 @@ export default function Navbar({ onOpenQuoteModal }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl font-sans">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl font-sans animate-fadeIn">
           <div className="grid grid-cols-2 gap-1.5 pb-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`px-3 py-2 rounded-xl text-xs font-semibold transition-colors ${
-                  link.highlight 
-                    ? 'text-amber-900 bg-amber-50 border border-amber-200 col-span-2 text-center font-bold' 
-                    : 'text-slate-700 hover:bg-slate-100'
-                }`}
+                className="px-3 py-2.5 rounded-xl text-xs font-bold text-slate-800 hover:bg-slate-100 transition-colors"
               >
                 {link.name}
               </a>

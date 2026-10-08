@@ -17,7 +17,7 @@ export default function SafetyQuality() {
         { key: 'Aperture Geometry', val: '25mm - 50mm Diamond Weave' },
         { key: 'Chemical Inertness', val: '100% Acid & Acid Rain Resistant' }
       ],
-      image: '/images/services/service_1.jpg'
+      image: '/images/services/service_1.jpeg'
     },
     {
       title: 'SS 304 Anchoring Hardware',

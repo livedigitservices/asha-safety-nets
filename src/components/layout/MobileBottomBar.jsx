@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { DISPLAY_PHONE, getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function MobileBottomBar({ onOpenQuoteModal }) {
@@ -21,7 +22,7 @@ export default function MobileBottomBar({ onOpenQuoteModal }) {
         rel="noopener noreferrer"
         className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/30"
       >
-        <MessageCircle className="w-4 h-4 fill-white stroke-none" />
+        <WhatsAppIcon className="w-4 h-4 text-white" />
         <span>WhatsApp</span>
       </a>
 

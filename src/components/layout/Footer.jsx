@@ -1,5 +1,6 @@
 import React from 'react';
-import { Shield, Phone, Mail, MapPin, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Shield, Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { DISPLAY_PHONE, getWhatsAppQuoteLink } from '../../utils/whatsapp';
 import { servicesData } from '../../data/servicesData';
 import { vizagAreasData } from '../../data/vizagAreasData';
@@ -50,7 +51,7 @@ export default function Footer({ onOpenQuoteModal }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-xs hover:bg-emerald-500/20 transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
+                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Instant WhatsApp</span>
               </a>
             </div>
@@ -70,7 +71,7 @@ export default function Footer({ onOpenQuoteModal }) {
                   className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center hover:bg-emerald-500 hover:text-slate-950 transition-all shadow-md group cursor-pointer"
                   title="WhatsApp"
                 >
-                  <MessageCircle className="w-5 h-5 fill-current stroke-none" />
+                  <WhatsAppIcon className="w-5 h-5" />
                 </a>
 
                 {/* Instagram */}

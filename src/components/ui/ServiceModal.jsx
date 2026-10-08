@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, CheckCircle2, ShieldCheck, MessageCircle, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function ServiceModal({ service, onClose, onSelectQuote }) {
@@ -99,7 +100,7 @@ export default function ServiceModal({ service, onClose, onSelectQuote }) {
             rel="noopener noreferrer"
             className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors shadow-md"
           >
-            <MessageCircle className="w-4 h-4 fill-white stroke-none" />
+            <WhatsAppIcon className="w-4 h-4 text-white" />
             <span>Request WhatsApp Quote</span>
           </a>
 

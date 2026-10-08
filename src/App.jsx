@@ -5,8 +5,7 @@ import { useLenisGSAP } from './hooks/useLenisGSAP';
 import TopHeader from './components/layout/TopHeader';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
-import FloatingWhatsApp from './components/layout/FloatingWhatsApp';
-import MobileBottomBar from './components/layout/MobileBottomBar';
+import FloatingActions from './components/layout/FloatingActions';
 
 // Sections
 import Hero from './components/sections/Hero';
@@ -16,7 +15,6 @@ import AboutSection from './components/sections/AboutSection';
 import ServicesGrid from './components/sections/ServicesGrid';
 import WhyChooseUs from './components/sections/WhyChooseUs';
 import SafetyQuality from './components/sections/SafetyQuality';
-import ProcessTimeline from './components/sections/ProcessTimeline';
 import ServiceAreasVizag from './components/sections/ServiceAreasVizag';
 import CustomerReviews from './components/sections/CustomerReviews';
 import FAQSection from './components/sections/FAQSection';
@@ -57,7 +55,6 @@ export default function App() {
         <ServicesGrid onOpenQuoteModal={(svc) => handleOpenQuote(svc)} />
         <WhyChooseUs />
         <SafetyQuality />
-        <ProcessTimeline onOpenQuoteModal={() => handleOpenQuote()} />
         <ServiceAreasVizag onOpenQuoteModal={() => handleOpenQuote()} />
         <CustomerReviews />
         <FAQSection />
@@ -68,9 +65,8 @@ export default function App() {
       {/* Footer */}
       <Footer onOpenQuoteModal={() => handleOpenQuote()} />
 
-      {/* Floating Action Widgets */}
-      <FloatingWhatsApp />
-      <MobileBottomBar onOpenQuoteModal={() => handleOpenQuote()} />
+      {/* Floating Action Buttons (Floating Call & WhatsApp) */}
+      <FloatingActions />
     </div>
   );
 }

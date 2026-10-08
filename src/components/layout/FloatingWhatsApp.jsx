@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function FloatingWhatsApp() {
@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
         className="relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transition-all duration-300 hover:scale-110 active:scale-95"
       >
         <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30"></span>
-        <MessageCircle className="w-7 h-7 fill-white stroke-none" />
+        <WhatsAppIcon className="w-7 h-7 text-white" />
       </a>
     </div>
   );

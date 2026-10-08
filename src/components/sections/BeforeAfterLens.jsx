@@ -44,12 +44,12 @@ export default function BeforeAfterLens({ onOpenQuoteModal }) {
 
         {/* Dynamic Image & Copy Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center font-sans">
-          <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-slate-200 shadow-md h-72 sm:h-96">
+          <div className="lg:col-span-7 relative overflow-hidden border border-slate-200 shadow-md h-72 sm:h-96">
             <img
               src={
                 activeTab === 'protected'
-                  ? '/images/services/service_1.jpg'
-                  : '/images/services/service_2.jpg'
+                  ? '/images/services/after.png'
+                  : '/images/services/before.png'
               }
               alt="Balcony View in Vizag"
               className="w-full h-full object-cover transition-opacity duration-500"

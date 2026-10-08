@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import SectionHeading from '../ui/SectionHeading';
 import ServiceModal from '../ui/ServiceModal';
 import { servicesData } from '../../data/servicesData';
-import { ArrowRight, Check, Sparkles, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check, Sparkles } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
 import { getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function ServicesGrid({ onOpenQuoteModal }) {
@@ -51,10 +52,10 @@ export default function ServicesGrid({ onOpenQuoteModal }) {
         {filteredServices.map((service) => (
           <div
             key={service.id}
-            className="group relative rounded-3xl bg-white border border-slate-200 hover:border-[#EBAC57] transition-all duration-300 overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1"
+            className="group relative bg-white border border-slate-200 hover:border-[#EBAC57] transition-all duration-300 overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1"
           >
             {/* Image Container */}
-            <div className="relative h-52 sm:h-56 overflow-hidden">
+            <div className="relative h-82 sm:h-96 overflow-hidden">
               <img
                 src={service.image}
                 alt={`${service.title} in Vizag`}
@@ -127,7 +128,7 @@ export default function ServicesGrid({ onOpenQuoteModal }) {
                   className="p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 border border-emerald-200 transition-colors"
                   title="WhatsApp Quote"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                 </a>
               </div>
             </div>

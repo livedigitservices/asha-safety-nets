@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import SectionHeading from '../ui/SectionHeading';
-import { Phone, MapPin, Send, MessageCircle, CheckCircle2, Loader2 } from 'lucide-react';
-import { DISPLAY_PHONE, getWhatsAppQuoteLink } from '../../utils/whatsapp';
+import { Phone, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
+import { DISPLAY_PHONE, PHONE_NUMBER, getWhatsAppQuoteLink } from '../../utils/whatsapp';
 import { vizagAreasData } from '../../data/vizagAreasData';
 
 export default function QuoteContactSection({ presetService = '' }) {
@@ -67,7 +68,7 @@ export default function QuoteContactSection({ presetService = '' }) {
       // Open WhatsApp chat after brief pause for instant customer reassurance
       const whatsappMsg = `Hi Asha Safety Nets Vizag! I submitted a quote request:\n- *Name*: ${formData.name}\n- *Phone*: ${formData.phone}\n- *Service*: ${formData.service}\n- *Location*: ${formData.location}, Visakhapatnam\n- *Message*: ${formData.message || 'Please schedule free site visit.'}`;
       setTimeout(() => {
-        window.open(`https://wa.me/919876543210?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+        window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
       }, 800);
     }
   };
@@ -120,7 +121,7 @@ export default function QuoteContactSection({ presetService = '' }) {
                 className="flex items-center gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-6 h-6 fill-emerald-600 stroke-none" />
+                  <WhatsAppIcon className="w-6 h-6 text-emerald-600" />
                 </div>
                 <div>
                   <span className="text-xs text-emerald-700 block font-bold uppercase tracking-wider">Instant WhatsApp Chat</span>
