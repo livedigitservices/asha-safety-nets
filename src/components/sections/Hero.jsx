@@ -14,7 +14,11 @@ export default function Hero({ onOpenQuoteModal }) {
       title: 'Anti-Pigeon & Bird Protection Nets'
     },
     {
-      url: '/images/services/after.png',
+      url: '/images/services/banner_image6.png',
+      title: 'Anti-Pigeon & Bird Protection Nets'
+    },
+    {
+      url: '/images/services/banner_image5.png',
       title: 'Invisible Stainless Steel Nets'
     },
     {

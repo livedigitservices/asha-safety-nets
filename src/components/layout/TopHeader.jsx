@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail } from 'lucide-react';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
-import { DISPLAY_PHONE, EMAIL_ADDRESS, INSTAGRAM_URL, FACEBOOK_URL, getWhatsAppQuoteLink } from '../../utils/whatsapp';
+import { DISPLAY_PHONE, RAW_PHONE, EMAIL_ADDRESS, INSTAGRAM_URL, FACEBOOK_URL, getWhatsAppQuoteLink } from '../../utils/whatsapp';
 
 export default function TopHeader() {
   const whatsappUrl = getWhatsAppQuoteLink({ service: 'Top Header Inquiry', area: 'Vizag' });
@@ -29,7 +29,7 @@ export default function TopHeader() {
             className="flex items-center gap-1.5 hover:text-[#EB7D1D] transition-colors"
           >
             <WhatsAppIcon className="w-3.5 h-3.5 text-[#EBAC57]" />
-            <span>8446144610</span>
+            <span>{RAW_PHONE}</span>
           </a>
         </div>
 
@@ -108,7 +108,7 @@ export default function TopHeader() {
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 text-[#EBAC57]" />
-              <span>8446144610 (WhatsApp)</span>
+              <span>{RAW_PHONE} (WhatsApp)</span>
             </a>
 
             <a 

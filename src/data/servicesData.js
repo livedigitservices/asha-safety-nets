@@ -162,7 +162,7 @@ export const servicesData = [
       'Available for sale or rental contract setup'
     ],
     startingPrice: '₹12 - ₹20 / sq. ft.',
-    image: '/images/services/service_7.jpg',
+    image: '/images/services/service_7.jpeg',
     popular: false,
     demandPercent: 80,
     category: 'commercial'

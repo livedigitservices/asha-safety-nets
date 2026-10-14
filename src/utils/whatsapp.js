@@ -1,5 +1,6 @@
-export const PHONE_NUMBER = '918446144610'; // Asha Safety Nets Vizag Contact
-export const DISPLAY_PHONE = '+91 8446144610';
+export const PHONE_NUMBER = '917888264441'; // Asha Safety Nets Vizag Contact
+export const DISPLAY_PHONE = '+91 7888264441';
+export const RAW_PHONE = '7888264441';
 export const EMAIL_ADDRESS = 'ashasafetynetsvizag@gmail.com';
 export const INSTAGRAM_URL = 'https://www.facebook.com/share/19jWK4RCiL/';
 export const FACEBOOK_URL = 'https://www.facebook.com/share/19jWK4RCiL/';
