@@ -15,8 +15,9 @@ export default function FloatingActions() {
         href={`tel:${rawPhone}`}
         aria-label={`Call Asha Safety Nets at ${DISPLAY_PHONE}`}
         title="Call Now"
-        className="group relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#264595] hover:bg-[#1b326d] text-white flex items-center justify-center shadow-xl shadow-blue-950/40 border-2 border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+        className="group relative w-18 h-18 sm:w-15 sm:h-15 rounded-full bg-[#264595] hover:bg-[#1b326d] text-white flex items-center justify-center shadow-xl shadow-blue-950/40 border-2 border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
       >
+        <span className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-30 pointer-events-none"></span>
         <span className="absolute right-full mr-2.5 px-2.5 py-1 rounded-lg bg-slate-900/90 text-white text-[11px] font-bold tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md hidden sm:block border border-slate-700">
           Call {DISPLAY_PHONE}
         </span>
@@ -30,7 +31,7 @@ export default function FloatingActions() {
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp with Asha Safety Nets Vizag"
         title="Chat on WhatsApp"
-        className="group relative w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 border-2 border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+        className="group relative w-17 h-17 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 border-2 border-white/30 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
       >
         {/* Subtle Pulse Animation Ring */}
         <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30 pointer-events-none"></span>
